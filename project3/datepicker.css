@@ -1,0 +1,40 @@
+body {
+	background: lightcoral;
+	font-family: "Arial";
+}
+td#OtherMonth {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(20, 105, 101, 1) 0%
+	);
+}
+td#CurMonth {
+	cursor: pointer;
+}
+td#CurMonth:hover {
+	background-color: lightcoral;
+	/* color: white; */
+}
+#LeftArrow,
+#RightArrow {
+	cursor: pointer;
+}
+/* #datepicker1 {
+	background-color: red;
+} */
+table,
+th,
+td {
+	margin: 30px auto;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+	border: 1px solid black;
+	text-align: center;
+	background-color: #fff;
+	cursor: default;
+	padding: 10px;
+}
+h1 {
+	text-align: center;
+}
