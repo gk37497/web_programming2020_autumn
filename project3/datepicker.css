@@ -13,10 +13,10 @@ td#OtherMonth {
 td#CurMonth {
 	cursor: pointer;
 }
-td#CurMonth:hover {
+/* td#CurMonth:hover {
 	background-color: lightcoral;
 	/* color: white; */
-}
+} */
 #LeftArrow,
 #RightArrow {
 	cursor: pointer;
@@ -37,4 +37,8 @@ td {
 }
 h1 {
 	text-align: center;
+}
+.haha {
+	background-color: lightcoral;
+	color: black;
 }

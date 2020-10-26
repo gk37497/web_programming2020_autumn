@@ -15,16 +15,33 @@
     <script type="text/javascript">
         //<![CDATA[
         datePicker1 = new DatePicker("datepicker1", function (id, fixedDate) {
+          effect();
           console.log("DatePicker with id", id,
                   "selected date:", fixedDate.month + "/" + fixedDate.day + "/" + fixedDate.year);
         });
         datePicker1.render(new Date());
         datePicker2 = new DatePicker("datepicker2", function (id, fixedDate) {
+          effect();
           console.log("DatePicker with id", id,
                   "selected date:", fixedDate.month + "/" + fixedDate.day + "/" + fixedDate.year);
         });
         datePicker2.render(new Date("1/1/2009"));
+        // document.getElementById("CurMonth").addEventListener("click", () =>{
+        //   document.getElementById("CurMonth").classList.add("haha");
+        // });
         //]]>
+        var effect = function(){
+          let CurMonth = document.querySelectorAll("#CurMonth");
+          console.log(CurMonth.length);
+          for (let i = 0; i < CurMonth.length; i++) {
+            // CurMonth[i].addEventListener("click", ()=>{
+              
+            // })
+            CurMonth[i].addEventListener("click" , ()=>{
+              CurMonth[i].classList.add("haha");
+            })
+          }
+        }
     </script>
   </body>
 </html>

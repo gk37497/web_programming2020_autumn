@@ -35,6 +35,7 @@ class DatePicker {
                             year: curDate.getFullYear()
                         };
                     cell.addEventListener("click", () => {
+                        // cell.classList.add("haha");
                         this.callback(this.id, ob);
                     });
                 } else {
@@ -45,12 +46,11 @@ class DatePicker {
             if (curDate.getMonth() != date.getMonth()) {
                 break;
             }
-		}
-		// if(curDate.getMonth() == "March"){
-		// 	document.body.style.background = "Yellow";
-		// }
+        }
+        // cell.classList.add("haha");
+        // document.getElementById("CurMonth").classList.add("haha");
         return table;
-	}
+    }
     _createCalenderHeader(table, date) {
         var header = table.createTHead();
         var headerRow = header.insertRow(0);
@@ -77,6 +77,10 @@ class DatePicker {
             console.log(date);
             this.render(date);
         });
+//         var day = document.getElementById("CurMonth");
+// day.addEventListener("click" , () => {
+//     day.style.background = "yellow";
+// })
         return header;
     }
 };
