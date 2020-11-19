@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "cs142 project3 - JavaScript and the DOM",
   "dependencies": {
+    "axios": "^0.21.0",
     "jshint": "^2.9.1-rc2",
     "latest-version": "^5.1.0"
   },

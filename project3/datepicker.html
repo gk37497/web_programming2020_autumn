@@ -21,7 +21,7 @@
         });
         datePicker1.render(new Date());
         datePicker2 = new DatePicker("datepicker2", function (id, fixedDate) {
-          effect();
+          effect1();
           console.log("DatePicker with id", id,
                   "selected date:", fixedDate.month + "/" + fixedDate.day + "/" + fixedDate.year);
         });
@@ -34,14 +34,36 @@
           let CurMonth = document.querySelectorAll("#CurMonth");
           console.log(CurMonth.length);
           for (let i = 0; i < CurMonth.length; i++) {
-            // CurMonth[i].addEventListener("click", ()=>{
-              
-            // })
             CurMonth[i].addEventListener("click" , ()=>{
+              for (let i = 0; i < CurMonth.length; i++) {
+                  if (CurMonth[i].className == "haha") {
+                    CurMonth[i].classList.remove("haha");
+                  }
+              }
               CurMonth[i].classList.add("haha");
+            // CurMonth[i].classList.toggle("haha")
+
             })
+            
           }
         }
+        var effect1 = function(){
+          let CurMonth = document.querySelectorAll("#CurMonth");
+          console.log(CurMonth.length);
+          for (let i = 0; i < CurMonth.length; i++) {
+            CurMonth[i].addEventListener("click" , ()=>{
+              for (let i = 0; i < CurMonth.length; i++) {
+                  if (CurMonth[i].className == "haha") {
+                    CurMonth[i].classList.remove("haha");
+                  }
+              }
+              CurMonth[i].classList.add("haha");
+            // CurMonth[i].classList.toggle("haha")
+            })
+            
+          }
+        }
+        // console.log(document.getElementById("datepicker2").textContent);
     </script>
   </body>
 </html>
