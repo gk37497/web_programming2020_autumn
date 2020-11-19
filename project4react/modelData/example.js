@@ -16,8 +16,8 @@ if (cs142models === undefined) {
 
 cs142models.exampleModel = function() {
    return {
-      name: 'Namsrai',
-      motto: `love your mum`,
+      name: 'namsrai',
+      motto: `Study hard`,
    };
 };
 

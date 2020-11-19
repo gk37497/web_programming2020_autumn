@@ -54,19 +54,17 @@ class States extends React.Component {
   render() {
     var results = window.cs142models.statesModel().filter(
       (state) => state.toLowerCase().includes(this.state.substring.toLowerCase())).map(
-        (state) => <div key={state}>{state}</div>);
-    
-
+        (state) => <div key={state}> {state} </div>);
+  
     return (
       <div className="cs-142-states-container">
-        <h1>This will list all states with the specificed substring, &quot;{`${this.state.substring}`}&quot;.</h1>
-        <h2> Note: this is case insensitive.</h2>
+        <h1>Түлхүүр үг,&quot;{`${this.state.substring}`}&quot;</h1>
         <input id="cs-142-states-filterInput" type="text" 
           value={this.state.substring} 
           onChange={event => this.handleFilterChange(event)} />
-        <h2>Result:</h2>
+        <h2>Үр дүн:</h2>
         <div id="cs-142-states-list">
-          {results.length == 0 ? `No results` : results}
+          {results.length == 0 ? `олдсонгүй` : results}
         </div>
       </div>
     );

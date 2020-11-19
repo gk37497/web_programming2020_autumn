@@ -103,7 +103,6 @@ class Example extends React.Component {
     return (
       <div className="container Example">
         <h1>CS142 Project#4 React.js Example</h1>
-
         <div className="motto-update">
           {/* Your problem #1 motto displaying and updating widget goes here */}
           {`${this.state.name}'s motto is: ${this.state.motto}`}

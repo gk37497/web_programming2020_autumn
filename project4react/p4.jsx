@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/main.css';
-
-
-import Example from './components/example/Example';
+import Dynamic from "./components/dynamic/dynamic";
 import Header from './components/header/header';
 
 ReactDOM.render(
   <div>
-    <div>
-        <Header/>
-    </div>
-        <Example />
+    <Header/>
+    <Dynamic/>
   </div>,
   document.getElementById('reactapp'),
 );
