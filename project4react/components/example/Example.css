@@ -25,7 +25,6 @@ you use won't conflict with these names.
 	padding-bottom: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-	border: 1px dashed #722b00;
 	display: inline-block;
 	box-sizing: border-box;
 	/* background-color: lightcoral; */
@@ -36,14 +35,25 @@ you use won't conflict with these names.
 }
 .motto-update {
 	display: flex;
-	/* background-color: lightcoral; */
 	flex-direction: column;
 	align-items: center;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	font-size: 16pt;
-	padding: 3px;
-	margin: 3px;
-	color: #849586;
+	padding: 20px;
+	margin: 20px;
+	color: white;
+	background-color: #282c34;
+}
+.motto{
+	display: flex;
+	flex-direction: row;
+}
+.motto p {
+	padding: 0;
+	margin: 0;
+	font-style: italic;
+	color: #f05927;
+	font-weight: 600;
 }
 
 #mottoInput {
@@ -53,3 +63,6 @@ you use won't conflict with these names.
 	color: black;
 	/* background-color: darkblue; */
 }
+/* .Example{
+	background-color: #f5f2f0;
+} */

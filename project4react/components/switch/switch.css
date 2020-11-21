@@ -1,0 +1,17 @@
+#switch-button{
+        width: 10%;
+        margin: 10px;
+        text-align: center;
+        font-family: monospace;
+        font-size: 1.2em;
+        background-color: #f05927;
+        color: #282c34;
+        transition: all 0.4s ease-out;
+        text-decoration: none;
+        border: 1px solid #282c34;
+    }
+#switch-button:hover{
+        background-color: #282c34;
+        color: #f05927;
+        text-decoration: underline;
+    }

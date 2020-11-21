@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dynamic from "./components/dynamic/dynamic";
+import Switch from "./components/switch/switch";
 import Header from './components/header/header';
+import './styles/main.css';
+
 
 ReactDOM.render(
   <div>
     <Header/>
-    <Dynamic/>
+    <Switch/>
   </div>,
   document.getElementById('reactapp'),
 );

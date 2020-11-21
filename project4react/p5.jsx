@@ -1,14 +1,28 @@
-<!doctype html>
-<html>
-  <head>
-    <title>CS142 Class Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="modelData/states.js"></script>
-    <script src="modelData/example.js"></script>
-  </head>
-  <body>
-      <div id="reactapp">
-        <script src="compiled/p4.bundle.js"></script>
-      </div>
-  </body>
-</html>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Example from './components/example/Example';
+import States from './components/states/States';
+import Header from "./components/header/header";
+import {HashRouter, Route, Link } from "react-router-dom";
+import './p5.css';
+import './styles/main.css';
+
+
+
+ReactDOM.render(
+    <div>
+        <Header />
+        <HashRouter>
+            <div className = "container">
+                <div id='dynamic-toolbar'>
+                    <Link className='view-button' to="/states">States</Link>
+                    <Link className='view-button' to="/example">Example</Link>
+                </div>
+                <Route path="/states" component={States}/>
+                <Route path="/example" component={Example}/>
+            </div>
+        </HashRouter>
+    </div>,
+    
+    document.getElementById('reactapp'),
+  );

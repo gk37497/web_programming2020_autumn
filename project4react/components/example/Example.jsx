@@ -1,6 +1,7 @@
 import React from 'react';
 import './Example.css';
 
+
 /*
   Since this component shows code we include the https://prismjs.com/
   formatter. We invoke it by labelling code blocks with class="language-jsx"
@@ -105,10 +106,10 @@ class Example extends React.Component {
         <h1>CS142 Project#4 React.js Example</h1>
         <div className="motto-update">
           {/* Your problem #1 motto displaying and updating widget goes here */}
-          {`${this.state.name}'s motto is: ${this.state.motto}`}
-          <br></br>
-          Change it here: 
-           <br></br>
+          <div className = "motto">
+            {`${this.state.name}'s motto is:`}
+            <p>{this.state.motto}</p>
+          </div>
           <input id="mottoInput" type="text" value={this.state.motto} onChange={event => this.handleMottoChange(event)} />
         </div>
 
