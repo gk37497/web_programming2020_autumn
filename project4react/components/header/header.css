@@ -4,8 +4,11 @@ header h1{
  margin: 0;
  font-size: 3rem;
  font-weight: 900;
+ margin-left: 30px;
 }
 header{
+    border-bottom:2px solid #f05927;
+    border-top:2px solid #f05927;
     padding: 0;
     margin: 0;
     display: flex;
