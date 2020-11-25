@@ -27,16 +27,16 @@ class States extends React.Component {
   
     return (
       <div className="container">
-        <h2>Search:&quot;{`${this.state.substring}`}&quot;</h2>
-        <input id="Input" type="text" 
-          value={this.state.substring} 
-          onChange={event => this.handleFilterChange(event)} />
-        <h3>Result:</h3>
+          <h3>Result:</h3>
         <div id="list">
           <div className = "listItem">
             {results.length == 0 ? `олдсонгүй` : results}
           </div>
         </div>
+        <h2>Search:&quot;{`${this.state.substring}`}&quot;</h2>
+        <input id="Input" type="text" 
+          value={this.state.substring} 
+          onChange={event => this.handleFilterChange(event)} />
       </div>
     );
   }

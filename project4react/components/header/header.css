@@ -20,6 +20,17 @@ header img{
     width: 50px;
     height: 50px;
 }
+@media(max-width:400px){
+  header h1{
+    font-size:20px;
+  }
+  header{
+      flex-direction: column;
+  }
+  header img{
+    display: none;
+}
+}
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;

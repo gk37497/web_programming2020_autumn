@@ -18,7 +18,7 @@ class Switch extends React.Component {
     render () {
         return (
             <div>
-                <button id='switch-button' 
+                <button className='switch-button' 
                     onClick={this.WindowChange}>
                         {`Switch to ${this.state.window == state ? example : state} view`} 
                 </button>

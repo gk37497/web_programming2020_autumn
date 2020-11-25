@@ -30,13 +30,24 @@ cs142-states- here.
 #Input {
    height: 40px;
    width: 50%;
-   font-size: 20pt;
+   font-size: 20px;
 }
 .listItem{
    box-sizing: border-box;
-   height: 400px;
+   height: 300px;
    display: flex;
    flex-direction: column;
    flex-wrap:wrap;
    padding: 50px;
+}
+@media(max-width:400px){
+   .listItem{
+      box-sizing: border-box;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap:wrap; */
+      padding: 5px;
+      font-size: 8px;
+   }
 }
