@@ -35,9 +35,9 @@ class UserDetail extends React.Component {
         <h1>
           {`${this.state.user.first_name} ${this.state.user.last_name}`}
         </h1>
-          <Button variant="contained" size="large" color= "primary">
-             <Link to={`/photos/${this.state.user._id}`} className = "Link">Photos</Link>
-          </Button>
+             <Link to={`/photos/${this.state.user._id}`} className = "Link">
+          <Button variant="contained" size="large" color= "primary"> Photos</Button>
+             </Link>
         </div>
         <div className = "desc">
           <ul>
