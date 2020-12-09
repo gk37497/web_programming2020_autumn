@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Button } from "@material-ui/core";
+import {Button } from "@material-ui/core";
 import "./userDetail.css";
 import { Link } from "react-router-dom";
 import fetchModel from "../../lib/fetchModelData";
@@ -28,40 +28,35 @@ class UserDetail extends React.Component {
       });
     }
   };
-
   render() {
     return this.state.user ? (
-      <Grid container
-      justify="space-evenly"
-      alignItems="center"
-      >
-        <Grid xs={6} item>
-          <Typography variant="h3">
+      <div className = "detail">
+        <div className="name">
+        <h1>
           {`${this.state.user.first_name} ${this.state.user.last_name}`}
-        </Typography>
-        <Typography variant="h5">
-        Occupation:
-          {this.state.user.occupation}
-        </Typography>
-        <Typography variant="h6">
-        Location:
-          {this.state.user.location}
-        </Typography>
-        <Typography variant="body1">
-        Description:
-          {this.state.user.description}
-        </Typography>
-        </Grid>
-        <Grid xs={6} item>
-          <Button variant="outlined" size="medium" color= "primary">
-              <Link to={`/photos/${this.state.user._id}`}>Photos</Link>
+        </h1>
+          <Button variant="contained" size="large" color= "primary">
+             <Link to={`/photos/${this.state.user._id}`} className = "Link">Photos</Link>
           </Button>
-        </Grid>
-      </Grid>
-    ) : (
-      <div />
-    );
+        </div>
+        <div className = "desc">
+          <ul>
+            <li>
+              <h4>Location    :</h4>
+               {this.state.user.location}
+            </li>
+            <li>
+              <h4>Occupation    :</h4>
+              {this.state.user.occupation}
+            </li>
+            <li>
+              <h4>Description   :</h4>
+              {this.state.user.description}
+            </li>
+          </ul>
+        </div>
+      </div>
+    ):<div/>
   }
 }
-
 export default UserDetail;

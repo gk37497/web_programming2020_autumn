@@ -1,0 +1,30 @@
+.detail {
+   background-color: #fafafa98;
+   display: flex;
+   flex-direction: row;
+   color: #3f51b5;
+}
+.desc {
+   flex: 2;
+}
+.desc ul li {
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   font-size: 15px;
+}
+.name {
+   flex: 1;
+}
+h4 {
+   padding: 0;
+   margin: 0;
+}
+.btn {
+   width: 100px;
+   height: 50px;
+}
+Link {
+   color: #ffffff;
+   text-decoration: none;
+}
