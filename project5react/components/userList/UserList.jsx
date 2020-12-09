@@ -4,7 +4,7 @@ import {
   List,
   ListItem,
   ListItemText,
-  Typography,
+  // Typography,
 }
 from '@material-ui/core';
 import { Link } from "react-router-dom";
@@ -32,7 +32,7 @@ class UserList extends React.Component {
           {
             this.state.users.map(el =>{
               return(
-                <Link className = "user" to = {`/users/${el.first_name}`} key = {el._id}>
+                <Link className = "user" to = {`/users/${el._id}`} key = {el._id}>
                 <ListItem >
                   <ListItemText primary ={`${el.first_name} ${el.last_name}`}/>
                 </ListItem>
