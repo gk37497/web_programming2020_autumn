@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  // Typography,
 }
 from '@material-ui/core';
 import { Link } from "react-router-dom";
@@ -23,11 +22,6 @@ class UserList extends React.Component {
     console.log(this.state.users);
     return (
       <div>
-        {/* <Typography variant="body1">
-          This is the user list, which takes up 3/12 of the window.
-          You might choose to use <a href="https://material-ui.com/demos/lists/">Lists</a> and <a href="https://material-ui.com/demos/dividers">Dividers</a> to
-          display your users like so:
-        </Typography> */}
         <List component="nav">
           {
             this.state.users.map(el =>{
