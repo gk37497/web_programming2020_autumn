@@ -1,7 +1,5 @@
-.card {
-    margin: 10px;
-}
-
-.media {
-    height: 140px,
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   height: 100%;
 }

@@ -1,0 +1,8 @@
+.user {
+   text-decoration: none;
+   color: blue;
+   transition: all 0.8s ease-in-out;
+}
+.user:hover {
+   text-decoration: underline;
+}
