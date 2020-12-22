@@ -13,3 +13,10 @@ cs142-main- here.
    height: calc(100vh - 85px);
    padding: 10px;
 }
+#photoshareapp {
+   padding: 0;
+   margin: 0;
+}
+html {
+   background-color: #fafafa;
+}

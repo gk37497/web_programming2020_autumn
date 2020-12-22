@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import { Grid, Paper } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import "./styles/main.css";
 
 // import necessary components
@@ -14,31 +14,32 @@ class PhotoShare extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "Home"
+      view: ""
     };
     this.changeView = this.changeView.bind(this);
   }
   changeView = (newView, name) => {
-    // console.log(name)
     name ? 
     this.setState({ view: newView + (name) }):this.setState({ view: newView })
   };
   render() {
     return (
       <HashRouter>
-        <div>
-          <Grid container spacing={8}>
-            <Grid item xs={12}>
+        <Container maxWidth = "md"
+          style={{
+          // // background: "red",
+          // maxWidth: "1000px",
+          // marginLeft: "auto",
+          // marginRight : "auto",
+        }}>
+          <Grid
+            container
+            // spacing={6}
+          >
+            <Grid item sm={12}>
               <TopBar view={this.state.view} />
             </Grid>
-            <div className="cs142-main-topbar-buffer" />
-            <Grid item sm={3}>
-              <Paper className="cs142-main-grid-item">
-                <UserList />
-              </Paper>
-            </Grid>
             <Grid item sm={9}>
-              <Paper className="cs142-main-grid-item">
                 <Switch>
                   <Route
                     path="/users/:userId"
@@ -49,15 +50,19 @@ class PhotoShare extends React.Component {
                   <Route
                     path="/photos/:userId"
                     render={props => (
-                      <UserPhotos changeView={this.changeView} {...props} />
+                      <UserPhotos userName={this.state.view} changeView={this.changeView} {...props} />
                     )}
                   />
                   <Route path="/users" component={UserList} />
                 </Switch>
-              </Paper>
+            </Grid>
+            <Grid
+              item
+              sm={3}>
+                <UserList />
             </Grid>
           </Grid>
-        </div>
+        </Container>
       </HashRouter>
     );
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import {Button } from "@material-ui/core";
+import {Button,CardContent, CardHeader,Typography, Paper } from "@material-ui/core";
 import "./userDetail.css";
 import { Link } from "react-router-dom";
 import fetchModel from "../../lib/fetchModelData";
@@ -30,32 +30,21 @@ class UserDetail extends React.Component {
   };
   render() {
     return this.state.user ? (
-      <div className = "detail">
-        <div className="name">
-        <h1>
-          {`${this.state.user.first_name} ${this.state.user.last_name}`}
-        </h1>
-             <Link to={`/photos/${this.state.user._id}`} className = "Link">
-          <Button variant="contained" size="large" color= "primary"> Photos</Button>
+      <Paper>
+        <CardHeader
+          title={`${ this.state.user.first_name } ${ this.state.user.last_name }`}
+          subheader={`${ this.state.user.occupation } , ${ this.state.user.location }`}
+          style = {{paddingBottom : "5px"}}
+        />
+        <CardContent style={{ paddingTop: "0"}}>
+          <Typography>
+            {this.state.user.description}
+          </Typography>
+            <Link to={`/photos/${this.state.user._id}`} className = "Link">
+               <Button size="medium" color= "primary"> Photos</Button>
              </Link>
-        </div>
-        <div className = "desc">
-          <ul>
-            <li>
-              <h4>Location    :</h4>
-               {this.state.user.location}
-            </li>
-            <li>
-              <h4>Occupation    :</h4>
-              {this.state.user.occupation}
-            </li>
-            <li>
-              <h4>Description   :</h4>
-              {this.state.user.description}
-            </li>
-          </ul>
-        </div>
-      </div>
+        </CardContent>
+      </Paper>
     ):<div/>
   }
 }

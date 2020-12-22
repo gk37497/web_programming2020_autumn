@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, AppBar, Toolbar, Typography } from "@material-ui/core";
+import { Grid, Toolbar, Typography, Container, Paper } from "@material-ui/core";
 import "./TopBar.css";
 class TopBar extends React.Component {
   constructor(props) {
@@ -15,8 +15,13 @@ class TopBar extends React.Component {
   }
   render() {
     return (
-      <AppBar className="cs142-topbar-appBar" position="absolute">
-        <Toolbar>
+      <Container maxWidth="md"
+        style={{
+          padding: "0",
+          marginBottom : "10px"
+      }}>
+        <Paper style={{ backgroundColor: "#ffffff" }}>
+          <Toolbar>
           <Grid
             container
             direction="row"
@@ -28,8 +33,9 @@ class TopBar extends React.Component {
             </Typography>
             <Typography variant="h5">{this.state.view}</Typography>
           </Grid>
-        </Toolbar>
-      </AppBar>
+          </Toolbar>
+        </Paper>
+      </Container>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Divider,
   List,
   ListItem,
   ListItemText,
@@ -30,7 +29,6 @@ class UserList extends React.Component {
                 <ListItem >
                   <ListItemText primary ={`${el.first_name} ${el.last_name}`}/>
                 </ListItem>
-                <Divider />
                 </Link>
               )
             })
