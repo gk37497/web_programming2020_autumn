@@ -1,11 +1,7 @@
 import React from "react";
-import { Button } from "@material-ui/core";
-import "./userDetail.css";
+import {Button,CardContent, CardHeader,Typography, Paper } from "@material-ui/core";
 import { Link } from "react-router-dom";
 const axios = require('axios').default;
-
-const DETAILS = "Info about ";
-
 /**
  * Define UserDetail, a React componment of CS142 project #5
  */
@@ -21,8 +17,7 @@ class UserDetail extends React.Component {
       .then(response => {
         newUser = response.data;
         this.setState({ user: response.data });
-        this.props.changeView(
-          DETAILS, `${newUser.first_name} ${newUser.last_name}`
+        this.props.changeView(`${newUser.first_name} ${newUser.last_name}`
         );
       })
       .catch(err => console.log(err.response));
@@ -39,7 +34,6 @@ class UserDetail extends React.Component {
           let newUser = response.data;
           self.setState({ user: newUser });
           self.props.changeView(
-            DETAILS,
             `${newUser.first_name} ${newUser.last_name}`
           );
         }).catch(err => console.log(err.response));
@@ -47,34 +41,23 @@ class UserDetail extends React.Component {
   };
 
   render() {
-      return this.state.user ? (
-        <div className = "detail">
-          <div className="name">
-          <h1>
-            {`${this.state.user.first_name} ${this.state.user.last_name}`}
-          </h1>
-              <Link to={`/photos/${this.state.user._id}`} className = "Link">
-            <Button variant="contained" size="large" color= "primary"> Photos</Button>
-              </Link>
-          </div>
-          <div className = "desc">
-            <ul>
-              <li>
-                <h4>Location    :</h4>
-                {this.state.user.location}
-              </li>
-              <li>
-                <h4>Occupation    :</h4>
-                {this.state.user.occupation}
-              </li>
-              <li>
-                <h4>Description   :</h4>
-                {this.state.user.description}
-              </li>
-            </ul>
-          </div>
-        </div>
-      ):<div/>
+    return this.state.user ? (
+      <Paper>
+        <CardHeader
+          title={`${ this.state.user.first_name } ${ this.state.user.last_name }`}
+          subheader={`${ this.state.user.occupation } , ${ this.state.user.location }`}
+          style = {{paddingBottom : "5px"}}
+        />
+        <CardContent style={{ paddingTop: "0"}}>
+          <Typography>
+            {this.state.user.description}
+          </Typography>
+            <Link to={`/photos/${this.state.user._id}`} className = "Link">
+               <Button size="medium" color= "primary"> Photos</Button>
+             </Link>
+        </CardContent>
+      </Paper>
+    ):<div/>
 }
 }
 
