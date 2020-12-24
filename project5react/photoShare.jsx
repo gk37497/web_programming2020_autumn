@@ -25,16 +25,9 @@ class PhotoShare extends React.Component {
   render() {
     return (
       <HashRouter>
-        <Container maxWidth = "md"
-          style={{
-          // // background: "red",
-          // maxWidth: "1000px",
-          // marginLeft: "auto",
-          // marginRight : "auto",
-        }}>
+        <Container maxWidth = "md">
           <Grid
             container
-            // spacing={6}
           >
             <Grid item sm={12}>
               <TopBar view={this.state.view} />

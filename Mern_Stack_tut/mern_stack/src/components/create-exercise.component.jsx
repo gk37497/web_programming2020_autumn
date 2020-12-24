@@ -21,7 +21,6 @@ export default class CreateExercise extends Component {
       users: []
     }
   }
-
   componentDidMount() {
     axios.get('http://localhost:5000/users/')
       .then(response => {
@@ -34,6 +33,7 @@ export default class CreateExercise extends Component {
       })
       .catch((error) => {
         console.log(error);
+        
       })
 
   }
@@ -94,10 +94,11 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeUsername}>
               {
                 this.state.users.map(function(user) {
-                  return <option 
-                    key={user}
-                    value={user}>{user}
-                    </option>;
+                  return (
+                      <option key={user}value={user}> 
+                         {user} 
+                      </option>
+                  )
                 })
               }
           </select>

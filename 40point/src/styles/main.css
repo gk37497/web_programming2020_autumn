@@ -1,0 +1,18 @@
+/** @format */
+
+.paper {
+   height: 85vh;
+   padding-top: 1vh;
+}
+h3 {
+   padding: 0;
+   margin: 0;
+}
+.paper :last-child {
+   text-align: left;
+}
+p {
+   padding: 0 0 0 15px;
+   margin: 0;
+   font-size: 0.8rem;
+}
