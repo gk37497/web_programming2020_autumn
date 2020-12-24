@@ -30,4 +30,32 @@ router.route('/add').post((req, res) =>
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').delete((req, res) => {
+    Bookreview.findByIdAndDelete(req.params.id)
+      .then(() => res.json('Review deleted.'))
+      .catch(err => res.status(400).json('Error: ' + err));
+});
+router.route('/:id').get((req, res) => {
+    Bookreview.findById(req.params.id)
+    .then(exercise => res.json(exercise))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+router.route('/update/:id').post((req, res) => {
+    Bookreview.findById(req.params.id)
+      .then(review => {
+        review.title = req.body.title;
+        review.category = req.body.category;
+        review.author = req.body.author;
+        review.rating = Number(req.body.rating);
+        review.review = req.body.review;
+        review.date = Date.parse(req.body.date);
+  
+        review.save()
+          .then(() => res.json('Review updated!'))
+          .catch(err => res.status(400).json('Error: ' + err));
+      })
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+
+
 module.exports = router;
